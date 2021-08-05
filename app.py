@@ -8,9 +8,9 @@ from dotenv import dotenv_values
 from decouple import config
 import calendar as cal
 import datetime
-
-config = dotenv_values(".env")
-API_Key = config['API_Key']
+import os
+# config = dotenv_values(".env")
+API_Key = os.environ.get("API_Key")
 
 ticker = st.sidebar.text_input("Ticker")
 month = st.sidebar.selectbox("Month", ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'))
